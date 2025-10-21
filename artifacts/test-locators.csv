@@ -1,0 +1,151 @@
+Page,Data-Test,Tag,Text
+"Login Page","login-container","div","Accepted usernames are:
+standard_user
+locked_out_user
+problem_user
+performance_glitch_user
+error_user
+visual_user
+
+Passw"
+"Login Page","username","input",""
+"Login Page","password","input",""
+"Login Page","login-button","input",""
+"Login Page","login-credentials-container","div","Accepted usernames are:
+standard_user
+locked_out_user
+problem_user
+performance_glitch_user
+error_user
+visual_user
+
+Passw"
+"Login Page","login-credentials","div","Accepted usernames are:
+standard_user
+locked_out_user
+problem_user
+performance_glitch_user
+error_user
+visual_user"
+"Login Page","login-password","div","Password for all users:
+secret_sauce"
+"Inventory Page","header-container","div","Open Menu
+All Items
+About
+Logout
+Reset App State
+Close Menu
+Swag Labs
+Products
+Name (A to Z)
+Name (A to Z)
+Name (Z to A)"
+"Inventory Page","primary-header","div","Open Menu
+All Items
+About
+Logout
+Reset App State
+Close Menu
+Swag Labs"
+"Inventory Page","open-menu","img",""
+"Inventory Page","inventory-sidebar-link","a","All Items"
+"Inventory Page","about-sidebar-link","a","About"
+"Inventory Page","logout-sidebar-link","a","Logout"
+"Inventory Page","reset-sidebar-link","a","Reset App State"
+"Inventory Page","close-menu","img",""
+"Inventory Page","shopping-cart-link","a",""
+"Inventory Page","secondary-header","div","Products
+Name (A to Z)
+Name (A to Z)
+Name (Z to A)
+Price (low to high)
+Price (high to low)"
+"Inventory Page","title","span","Products"
+"Inventory Page","active-option","span","Name (A to Z)"
+"Inventory Page","product-sort-container","select","Name (A to Z)
+Name (Z to A)
+Price (low to high)
+Price (high to low)"
+"Inventory Page","inventory-container","div","Sauce Labs Backpack
+carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequ"
+"Inventory Page","inventory-list","div","Sauce Labs Backpack
+carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequ"
+"Inventory Page","inventory-item","div","Sauce Labs Backpack
+carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequ"
+"Inventory Page","item-4-img-link","a",""
+"Inventory Page","inventory-item-sauce-labs-backpack-img","img",""
+"Inventory Page","inventory-item-description","div","Sauce Labs Backpack
+carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequ"
+"Inventory Page","item-4-title-link","a","Sauce Labs Backpack"
+"Inventory Page","inventory-item-name","div","Sauce Labs Backpack"
+"Inventory Page","inventory-item-desc","div","carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tabl"
+"Inventory Page","inventory-item-price","div","$29.99"
+"Inventory Page","add-to-cart-sauce-labs-backpack","button","Add to cart"
+"Inventory Page","item-0-img-link","a",""
+"Inventory Page","inventory-item-sauce-labs-bike-light-img","img",""
+"Inventory Page","item-0-title-link","a","Sauce Labs Bike Light"
+"Inventory Page","add-to-cart-sauce-labs-bike-light","button","Add to cart"
+"Inventory Page","item-1-img-link","a",""
+"Inventory Page","inventory-item-sauce-labs-bolt-t-shirt-img","img",""
+"Inventory Page","item-1-title-link","a","Sauce Labs Bolt T-Shirt"
+"Inventory Page","add-to-cart-sauce-labs-bolt-t-shirt","button","Add to cart"
+"Inventory Page","item-5-img-link","a",""
+"Inventory Page","inventory-item-sauce-labs-fleece-jacket-img","img",""
+"Inventory Page","item-5-title-link","a","Sauce Labs Fleece Jacket"
+"Inventory Page","add-to-cart-sauce-labs-fleece-jacket","button","Add to cart"
+"Inventory Page","item-2-img-link","a",""
+"Inventory Page","inventory-item-sauce-labs-onesie-img","img",""
+"Inventory Page","item-2-title-link","a","Sauce Labs Onesie"
+"Inventory Page","add-to-cart-sauce-labs-onesie","button","Add to cart"
+"Inventory Page","item-3-img-link","a",""
+"Inventory Page","inventory-item-test.allthethings()-t-shirt-(red)-img","img",""
+"Inventory Page","item-3-title-link","a","Test.allTheThings() T-Shirt (Red)"
+"Inventory Page","add-to-cart-test.allthethings()-t-shirt-(red)","button","Add to cart"
+"Inventory Page","footer","footer","Twitter
+Facebook
+LinkedIn
+© 2025 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy"
+"Inventory Page","social-twitter","a","Twitter"
+"Inventory Page","social-facebook","a","Facebook"
+"Inventory Page","social-linkedin","a","LinkedIn"
+"Inventory Page","footer-copy","div","© 2025 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy"
+"Cart Page","header-container","div","Open Menu
+All Items
+About
+Logout
+Reset App State
+Close Menu
+Swag Labs
+Your Cart"
+"Cart Page","primary-header","div","Open Menu
+All Items
+About
+Logout
+Reset App State
+Close Menu
+Swag Labs"
+"Cart Page","open-menu","img",""
+"Cart Page","inventory-sidebar-link","a","All Items"
+"Cart Page","about-sidebar-link","a","About"
+"Cart Page","logout-sidebar-link","a","Logout"
+"Cart Page","reset-sidebar-link","a","Reset App State"
+"Cart Page","close-menu","img",""
+"Cart Page","shopping-cart-link","a",""
+"Cart Page","secondary-header","div","Your Cart"
+"Cart Page","title","span","Your Cart"
+"Cart Page","cart-contents-container","div","QTYDescription
+Continue Shopping
+Checkout"
+"Cart Page","cart-list","div","QTYDescription"
+"Cart Page","cart-quantity-label","div","QTY"
+"Cart Page","cart-desc-label","div","Description"
+"Cart Page","continue-shopping","button","Continue Shopping"
+"Cart Page","checkout","button","Checkout"
+"Cart Page","footer","footer","Twitter
+Facebook
+LinkedIn
+© 2025 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy"
+"Cart Page","social-twitter","a","Twitter"
+"Cart Page","social-facebook","a","Facebook"
+"Cart Page","social-linkedin","a","LinkedIn"
+"Cart Page","footer-copy","div","© 2025 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy"

@@ -1,0 +1,5 @@
+[
+  { "name": "Sauce Labs Backpack", "addTestId": "add-to-cart-sauce-labs-backpack" },
+  { "name": "Sauce Labs Bike Light", "addTestId": "add-to-cart-sauce-labs-bike-light" },
+  { "name": "Sauce Labs Bolt T-Shirt", "addTestId": "add-to-cart-sauce-labs-bolt-t-shirt" }
+]
