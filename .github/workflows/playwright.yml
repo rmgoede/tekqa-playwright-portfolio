@@ -70,31 +70,6 @@ jobs:
           path: playwright-report
           retention-days: 7
 
-      - name: Generate test summary badge
-        if: always()
-        run: |
-          npx playwright test --reporter=json > results.json
-          node -e "
-          const fs = require('fs');
-          const data = JSON.parse(fs.readFileSync('results.json'));
-          const summary = { passed: 0, failed: 0, skipped: 0 };
-          data.suites.forEach(suite => suite.tests?.forEach(t => {
-            if (t.status === 'passed') summary.passed++;
-            else if (t.status === 'failed') summary.failed++;
-            else if (t.status === 'skipped') summary.skipped++;
-          }));
-          fs.writeFileSync('summary.json', JSON.stringify(summary, null, 2));
-          "
-          
-      - name: Update badge on Gist
-        if: always()
-        uses: gautamkrishnar/update-gist@v2
-        env:
-          GIST_ID: your_gist_id_here
-          GH_TOKEN: ${{ secrets.GIST_TOKEN }}
-        with:
-          filename: summary.json
-
       # Traces on failure help debugging
       - name: Upload traces
         if: failure()
