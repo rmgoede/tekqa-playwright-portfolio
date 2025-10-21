@@ -12,6 +12,11 @@ jobs:
     env:
       # Your tests already read process.env.GITHUB_TOKEN
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      POLARIS_EMAIL: ${{ secrets.POLARIS_EMAIL }}
+      POLARIS_PASSWORD: ${{ secrets.POLARIS_PASSWORD }}
+      # If you also use alternate names:
+      POLARIS_USER: ${{ secrets.POLARIS_EMAIL }}
+      POLARIS_PASS: ${{ secrets.POLARIS_PASSWORD }}
 
     steps:
       - name: Checkout
