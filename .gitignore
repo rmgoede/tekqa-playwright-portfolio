@@ -6,6 +6,10 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
+.DS_Store
+tests/.DS_Store
 
 # Environment / secrets
 .env
+*.env 
+

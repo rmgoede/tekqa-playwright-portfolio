@@ -1,23 +1,22 @@
-# TekQA Playwright Portfolio  
+# 🧪 TekQA Playwright Portfolio  
 ![Playwright Tests](https://github.com/rmgoede/tekqa-playwright-portfolio/actions/workflows/playwright.yml/badge.svg)
 
-This repository demonstrates automated Playwright tests running in CI/CD via GitHub Actions.
+> Automated end-to-end testing portfolio showcasing CI/CD integration, cross-browser execution, and GitHub Actions workflow optimization.
 
-# 1) Install deps & browsers
+---
+
+## 🚀 Project Overview
+This repository demonstrates a professional Playwright test automation setup with:
+- Continuous Integration via **GitHub Actions**
+- Browser caching for faster CI runs  
+- HTML reports + trace artifacts for debugging  
+- Modular test structure using TypeScript  
+
+---
+
+## ⚙️ Setup & Installation
+
+### 1️⃣ Install dependencies & browsers
+```bash
 npm ci
 npx playwright install
-
-# 2) Add your secrets
-cp .env.example .env
-# edit .env with your Polaris creds (and optional GitHub token)
-
-# 3) Run tests
-npm test                 # all projects from config (default Chromium)
-npm run test:headed      # headed run
-npm run test:chromium    # chromium only
-npm run test:ui          # visual test runner
-
-# 4) Open last HTML report
-npm run report
-
-
