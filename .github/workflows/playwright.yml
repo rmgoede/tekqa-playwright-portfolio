@@ -69,7 +69,7 @@ jobs:
           name: playwright-report
           path: playwright-report
           retention-days: 7
-          
+
       - name: Generate test summary badge
         if: always()
         run: |
@@ -88,12 +88,12 @@ jobs:
           
       - name: Update badge on Gist
         if: always()
-        uses: andymckay/update-gist@v1
+        uses: gautamkrishnar/update-gist@v2
         env:
           GIST_ID: your_gist_id_here
-          GITHUB_TOKEN: ${{ secrets.GIST_TOKEN }}
+          GH_TOKEN: ${{ secrets.GIST_TOKEN }}
         with:
-          file: summary.json
+          filename: summary.json
 
       # Traces on failure help debugging
       - name: Upload traces
