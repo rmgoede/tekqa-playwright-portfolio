@@ -10,8 +10,7 @@ jobs:
     timeout-minutes: 15
 
     env:
-      # Use GitHub Actions' built-in token for your GitHub API calls in tests
-      # Your tests read process.env.GITHUB_TOKEN already.
+      # Your tests already read process.env.GITHUB_TOKEN
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
@@ -23,13 +22,37 @@ jobs:
         with:
           node-version: 20
 
+      # ---------- CACHES ----------
+      # Cache npm deps based on your lockfile
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
+      # Cache Playwright browsers (Chromium, etc.)
+      # Key includes lockfile hash so a Playwright version bump refreshes cache.
+      - name: Cache Playwright browsers
+        id: cache-playwright
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-playwright-
+      # ----------------------------
+
       - name: Install dependencies
         run: npm ci
 
+      # Install browsers only if cache missed (saves time on cache hits)
       - name: Install Playwright browsers
+        if: steps.cache-playwright.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps
 
-      # Run Chromium only to keep CI fast & stable at first
+      # Run Chromium only to keep CI fast & stable
       - name: Run tests
         run: npx playwright test --project=chromium --reporter=html
 
