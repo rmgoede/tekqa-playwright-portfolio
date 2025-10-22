@@ -7,12 +7,14 @@
 
 ## 🚀 Project Overview
 This repository demonstrates a professional Playwright test automation setup with:
-- Continuous Integration via **GitHub Actions**
-- Browser caching for faster CI runs  
-- HTML reports + trace artifacts for debugging  
-- Modular test structure using TypeScript  
 
----
+- ✅ Continuous Integration via **GitHub Actions**
+- ⚡ Browser caching for faster CI runs
+- 🧭 HTML reports + trace artifacts for debugging
+- 🧩 Modular test structure using **TypeScript**
+- 🔐 Environment-based configuration with `.env` and `.env.example`
+
+--
 
 ## ⚙️ Setup & Installation
 
