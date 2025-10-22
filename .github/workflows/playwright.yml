@@ -57,6 +57,11 @@ jobs:
         if: steps.cache-playwright.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps
 
+      - name: Debug – show which secrets are set (no values printed)
+        run: |
+          echo "POLARIS_EMAIL set? ${{ secrets.POLARIS_EMAIL != '' }}"
+          echo "POLARIS_PASSWORD set? ${{ secrets.POLARIS_PASSWORD != '' }}"
+          
       # Run Chromium only to keep CI fast & stable
       - name: Run tests
         run: npx playwright test --project=chromium --reporter=html
