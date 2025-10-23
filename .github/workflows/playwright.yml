@@ -6,6 +6,12 @@ on:
 
 jobs:
   test:
+    # 👇 Explicit job-level permissions
+    permissions:
+      contents: read       # read repo files only
+      actions: write       # needed for upload-artifact
+      checks: write        # optional; lets workflow update check status
+      
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
