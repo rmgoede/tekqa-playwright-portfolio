@@ -32,3 +32,25 @@ This repository demonstrates a professional Playwright test automation setup wit
 ```bash
 npm ci
 npx playwright install
+```
+---
+
+## 👨‍💻 Author
+**Ryan Goede** — TekQA Consulting  
+🌐 https://tekqaconsulting.com
+
+
+
+## 🏁 Status
+- ✅ 14/14 tests passing on GitHub Actions (Chromium)
+- 🧪 Framework: Playwright + TypeScript
+- 📦 CI: GitHub Actions with cached browsers & artifacts
+
+
+## 🧰 Useful Commands
+```
+npm run test:headed        # Run all tests headed
+npm run test:chromium      # Chromium only
+npm run test:ui            # Playwright UI mode
+npm run report             # Open last HTML report
+npm run update-snapshots   # Approve new visual baselines
