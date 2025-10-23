@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 
+//basic login test for saucedemo.com and logout cleanup
 test('SauceDemo login works', async ({ page }) => {
   await page.goto('https://www.saucedemo.com/');
 

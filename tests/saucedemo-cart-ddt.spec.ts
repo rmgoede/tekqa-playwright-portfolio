@@ -1,4 +1,6 @@
 // tests/saucedemo-cart-ddt.spec.ts
+
+//This test was used to demonstrate data-driven testing (DDT) by adding multiple products to the cart from a dataset(saucedemo-products.json) and verifying their presence in the cart.
 import { test, expect } from '@playwright/test';
 import fs from 'node:fs/promises';
 import path from 'node:path';

@@ -8,6 +8,8 @@ node_modules/
 /playwright/.auth/
 .DS_Store
 tests/.DS_Store
+/artifacts/
+/node_modules/
 
 # Environment / secrets
 .env

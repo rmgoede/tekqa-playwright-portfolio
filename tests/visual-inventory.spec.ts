@@ -1,5 +1,8 @@
 import { test, expect } from '@playwright/test';
 
+
+// This test verifies the visual appearance of the inventory header on saucedemo.com from a snapshot perspective.
+
 //visual regression test for saucedemo inventory header
 //run---->npx playwright test tests/visual-inventory.spec.ts --project=chromium
 //If the header layout, font, or color shifts even slightly, the test will fail and produce a side-by-side diff in the HTML report.

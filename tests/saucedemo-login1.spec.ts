@@ -1,12 +1,10 @@
 import { test, expect } from '@playwright/test';
 
 // Some Notes…
-// How to use it:
+// This test logs into saucedemo.com, adds a backpack to the cart, verifies it's in the cart, and then logs out.
+// How to use it debug:
 // Uncomment one await test.debug() where needed
-// Run headed:
-// npx playwright test tests/saucedemo-login1.spec.ts --headed
-// The Inspector opens at that line; hit Resume when done. It auto-closes at test end.
-// PWDEBUG=1 also works for full session debugging but is slower.
+
 
 test('login lands on inventory, add backpack to cart, then logout', async ({ page }) => {
   // Login

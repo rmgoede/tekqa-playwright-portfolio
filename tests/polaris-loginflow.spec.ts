@@ -1,11 +1,7 @@
 import { test, expect } from '@playwright/test';
-//Quick notes:
-/*Your key fix was waiting for the menu’s [role="menu"] container and then selecting the actual anchor inside it: a[role="menuitem"][href*="/account/profile"]. 
-That avoids “menuitem” variants that aren’t clickable yet.
-You’re already using baseURL in playwright.config.ts, so page.goto('/') is perfect.
-The test supports both POLARIS_EMAIL/POLARIS_PASSWORD and POLARIS_USER/POLARIS_PASS so you don’t have to rename anything in your .env.
 
-Legacy end-to-end flow kept for compatibility, now using robust menu logic.
+/*Quick notes:
+Legacy end-to-end polaris login flow kept for compatibility, now using robust menu logic.
 
 Handy run commands (most common in the wild):
 Normal headed run:

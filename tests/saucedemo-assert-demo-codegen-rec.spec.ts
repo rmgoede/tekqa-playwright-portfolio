@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-//this was used to open inspector and generate code snippets with the generate assertions checked to copy paste here
+//This test was used to open inspector and see how to generate code snippets with the generate assertions checked to copy paste here
 //Launch a new Chromium browser window
 //Open the Playwright Inspector / Recorder
 //Start a new recording session
