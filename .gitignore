@@ -15,3 +15,12 @@ tests/.DS_Store
 .env
 *.env 
 
+# Logs and OS junk
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VS Code project settings
+.vscode/
+
