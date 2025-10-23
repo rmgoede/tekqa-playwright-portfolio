@@ -1,26 +1,33 @@
+# =========================
+# 🧪 Playwright & artifacts
+# =========================
+playwright-report/
+test-results/
+blob-report/
+artifacts/
+playwright/.cache/
+playwright/.auth/
 
-# Playwright
+# =========================
+# 🧱 Deps / builds / logs
+# =========================
 node_modules/
-/test-results/
-/playwright-report/
-/blob-report/
-/playwright/.cache/
-/playwright/.auth/
-.DS_Store
-tests/.DS_Store
-/artifacts/
-/node_modules/
-
-# Environment / secrets
-.env
-*.env 
-
-# Logs and OS junk
+coverage/
+dist/
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# VS Code project settings
-.vscode/
+# =========================
+# 🔐 Environment / secrets
+# =========================
+.env
+*.env
+!.env.example   # keep the example checked in
 
+# =========================
+# 💻 OS / editor junk
+# =========================
+.DS_Store
+.vscode/
