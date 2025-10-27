@@ -82,7 +82,7 @@ npx playwright install
 
 
 ## 🏁 Status
-- ✅ 14/14 tests passing on GitHub Actions (Chromium)
+- ✅ 14/14 test cases passing in GitHub Actions across Chromium + Firefox
 - 🧪 Framework: Playwright + TypeScript
 - 📦 CI: GitHub Actions with cached browsers & artifacts
 
