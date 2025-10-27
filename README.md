@@ -89,9 +89,21 @@ npx playwright install
 
 ## 🧰 Useful Commands
 ```
-npm run test:headed        # Run all tests headed
-npm run test:chromium      # Chromium only
-npm run test:ui            # Playwright UI mode
-npm run report             # Open last HTML report
+# Fast local smoke test (quick feedback loop)
+npm run test:quick        
+
+# Full suite (all tests across Chromium + Firefox)
+npm run test:all           
+
+# Browser-specific execution
+npm run test:chromium      
+npm run test:ff            
+
+# Debugging / development helpers
+npm run test:ui            # Playwright UI test runner
+npm run test:headed        # Run tests in visible browser
+npm run debug              # PWDEBUG=1 interactive mode
+
+# Results & visual regression
+npm run report             # Open the last HTML report
 npm run update-snapshots   # Approve new visual baselines
-npx playwright test --grep @smoke   # Run demo-ready smoke flow
