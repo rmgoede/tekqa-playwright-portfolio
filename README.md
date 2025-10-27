@@ -36,7 +36,7 @@ The goal here is **clarity, maintainability, and choosing the right tool for the
 
 ---
 
-## 🎯 Scope & Intent (Realistic and Honest)
+## 🎯 Scope & Intent
 
 This project is *not* intended to be:
 
