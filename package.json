@@ -2,6 +2,7 @@
   "name": "playwright-ai-starter",
   "version": "1.0.0",
   "scripts": {
+  "test:quick": "npx playwright test --project=chromium",
   "test": "playwright test",
   "test:chrome": "playwright test --project=chromium",
   "test:ff": "playwright test --project=firefox",
