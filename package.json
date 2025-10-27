@@ -2,7 +2,8 @@
   "name": "playwright-ai-starter",
   "version": "1.0.0",
   "scripts": {
-  "test:quick": "npx playwright test --project=chromium",
+  "test:quick": "npx playwright test --project=chromium --grep @smoke",
+  "test:all": "npx playwright test",
   "test": "playwright test",
   "test:chrome": "playwright test --project=chromium",
   "test:ff": "playwright test --project=firefox",
