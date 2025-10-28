@@ -2,25 +2,27 @@
   "name": "playwright-ai-starter",
   "version": "1.0.0",
   "scripts": {
-  "test": "playwright test",
-  "test:quick": "playwright test --project=chromium --grep @smoke",
-  "test:all": "playwright test",
-  "test:chromium": "playwright test --project=chromium",
-  "test:firefox": "playwright test --project=firefox",
-  "test:webkit": "playwright test --project=webkit",
-  "test:headed": "playwright test --project=chromium --headed",
-  "test:ui": "playwright test --ui",
-  "debug": "PWDEBUG=1 playwright test --project=chromium",
-  "report": "playwright show-report",
-  "trace": "playwright show-trace test-results/**/*.zip",
-  "update-snapshots": "playwright test --update-snapshots"
-},
-
+    "test": "playwright test",
+    "test:quick": "playwright test --project=chromium --grep @smoke",
+    "test:all": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit",
+    "test:headed": "playwright test --project=chromium --headed",
+    "test:ui": "playwright test --ui",
+    "debug": "PWDEBUG=1 playwright test --project=chromium",
+    "report": "playwright show-report",
+    "trace": "playwright show-trace test-results/**/*.zip",
+    "update-snapshots": "playwright test --update-snapshots"
+  },
   "devDependencies": {
     "@playwright/test": "^1.56.0",
     "@types/node": "^24.7.0",
     "dotenv": "^17.2.3",
     "playwright": "^1.56.0",
     "tsx": "^4.20.6"
+  },
+  "dependencies": {
+    "@playwright/mcp": "^0.0.44"
   }
 }
