@@ -31,3 +31,6 @@ yarn-error.log*
 # =========================
 .DS_Store
 .vscode/
+
+# Agent sandbox artifacts (keep plans & tests tracked)
+agents/ai-generated/artifacts/**
