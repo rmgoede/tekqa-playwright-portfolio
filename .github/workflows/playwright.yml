@@ -11,18 +11,20 @@ jobs:
       contents: read       # read repo files only
       actions: write       # needed for upload-artifact
       checks: write        # optional; lets workflow update check status
-      
+
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
     env:
-      # Your tests already read process.env.GITHUB_TOKEN
+      # Repo & app secrets used by your core (Polaris) tests
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       POLARIS_EMAIL: ${{ secrets.POLARIS_EMAIL }}
       POLARIS_PASSWORD: ${{ secrets.POLARIS_PASSWORD }}
-      # If you also use alternate names:
       POLARIS_USER: ${{ secrets.POLARIS_EMAIL }}
       POLARIS_PASS: ${{ secrets.POLARIS_PASSWORD }}
+
+      # 👇 Make baseURL available to your core suite in CI
+      CORE_BASE_URL: https://adventures.polaris.com
 
     steps:
       - name: Checkout
@@ -34,7 +36,6 @@ jobs:
           node-version: 20
 
       # ---------- CACHES ----------
-      # Cache npm deps based on your lockfile
       - name: Cache npm
         uses: actions/cache@v4
         with:
@@ -43,8 +44,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-npm-
 
-      # Cache Playwright browsers (Chromium, etc.)
-      # Key includes lockfile hash so a Playwright version bump refreshes cache.
       - name: Cache Playwright browsers
         id: cache-playwright
         uses: actions/cache@v4
@@ -58,14 +57,14 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # Install browsers only if cache missed (saves time on cache hits)
+      # Install browsers only if cache missed (fast on cache hit)
       - name: Install Playwright browsers
         if: steps.cache-playwright.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps
 
-      # Run Chromium only to keep CI fast & stable
+      # 👇 Run ALL projects (chromium, firefox, ai-generated)
       - name: Run tests
-        run: npx playwright test --project=chromium --reporter=html
+        run: npx playwright test --reporter=html
 
       # Always publish the HTML report
       - name: Upload HTML report
