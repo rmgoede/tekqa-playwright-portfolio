@@ -2,40 +2,49 @@ import 'dotenv/config';
 import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
-  testDir: './tests',
+  // Default testDir for “core” tests; ai-generated will override with its own.
+  testDir: 'tests',
+
+  // ONE projects array that includes both browser projects (for core)
+  // and a dedicated project for ai-generated.
+  projects: [
+    // Core suite runs in Chromium
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
+    },
+    // Core suite runs in Firefox
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+    // AI-generated suite (separate testDir)
+    {
+      name: 'ai-generated',
+      testDir: 'agents/ai-generated/tests',
+      use: { ...devices['Desktop Chrome'] },
+    },
+  ],
+
+  // Shared defaults
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : undefined,
-
-  // In CI, keep the report artifact; don't auto-open.
   reporter: [['html', { open: 'never' }]],
 
+  // Global "use" defaults (no duplicates)
   use: {
-    // Common workplace default is headless; use --headed when you want visuals.
     headless: true,
-    //BASE URL if you have an app server
-    baseURL: 'https://adventures.polaris.com',
-
-    // Good debugging defaults
+    testIdAttribute: 'data-test',
+    viewport: { width: 1280, height: 720 },
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'retain-on-failure',
-
-    // ...your existing settings
-  testIdAttribute: 'data-test',   // 👈 make getByTestId() look for data-test=
-  
-    viewport: { width: 1280, height: 720 },
-    // baseURL: 'http://localhost:3000', // enable if you have an app server
+    // No global baseURL so the two suites stay independent.
   },
 
-  projects: [
-    { name: 'chromium', use: { ...devices['Desktop Chrome'] } },
-    { name: 'firefox',  use: { ...devices['Desktop Firefox'] } },
-   // { name: 'webkit',   use: { ...devices['Desktop Safari'] } },
-  ],
-
-  // If you have a web app to start, uncomment:
+  // If you need to start a local web app later, uncomment:
   // webServer: {
   //   command: 'npm run start',
   //   url: 'http://localhost:3000',

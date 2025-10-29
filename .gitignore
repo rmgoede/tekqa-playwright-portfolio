@@ -7,6 +7,11 @@ blob-report/
 artifacts/
 playwright/.cache/
 playwright/.auth/
+# Ignore all artifacts by default
+agents/ai-generated/artifacts/*
+# But DO track baseline image(s)
+!agents/ai-generated/artifacts/*.png
+
 
 # =========================
 # 🧱 Deps / builds / logs
