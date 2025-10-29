@@ -6,24 +6,20 @@ on:
 
 jobs:
   test:
-    # 👇 Explicit job-level permissions
     permissions:
-      contents: read       # read repo files only
-      actions: write       # needed for upload-artifact
-      checks: write        # optional; lets workflow update check status
+      contents: read
+      actions: write
+      checks: write
 
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
     env:
-      # Repo & app secrets used by your core (Polaris) tests
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       POLARIS_EMAIL: ${{ secrets.POLARIS_EMAIL }}
       POLARIS_PASSWORD: ${{ secrets.POLARIS_PASSWORD }}
       POLARIS_USER: ${{ secrets.POLARIS_EMAIL }}
       POLARIS_PASS: ${{ secrets.POLARIS_PASSWORD }}
-
-      # 👇 Make baseURL available to your core suite in CI
       CORE_BASE_URL: https://adventures.polaris.com
 
     steps:
@@ -35,7 +31,7 @@ jobs:
         with:
           node-version: 20
 
-      # ---------- CACHES ----------
+      # --- CACHES ---
       - name: Cache npm
         uses: actions/cache@v4
         with:
@@ -52,22 +48,19 @@ jobs:
           key: ${{ runner.os }}-playwright-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-playwright-
-      # ----------------------------
+      # -------------
 
       - name: Install dependencies
         run: npm ci
 
-      # Install browsers only if cache missed (fast on cache hit)
-      - name: Install Playwright browsers
+      - name: Install Playwright browsers (if cache missed)
         if: steps.cache-playwright.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps
 
-      # 👇 Run ALL projects (chromium, firefox, ai-generated)
+      # ✅ Run BOTH projects in one command (two --project flags; no commas)
       - name: Run tests (Chromium only, core + ai-generated)
-        run: npx playwright test --project=chromium,ai-generated --reporter=html
+        run: npx playwright test --project=chromium --project=ai-generated --reporter=html
 
-
-      # Always publish the HTML report
       - name: Upload HTML report
         if: always()
         uses: actions/upload-artifact@v4
@@ -76,7 +69,6 @@ jobs:
           path: playwright-report
           retention-days: 7
 
-      # Traces on failure help debugging
       - name: Upload traces
         if: failure()
         uses: actions/upload-artifact@v4
