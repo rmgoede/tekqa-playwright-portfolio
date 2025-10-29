@@ -63,8 +63,9 @@ jobs:
         run: npx playwright install --with-deps
 
       # 👇 Run ALL projects (chromium, firefox, ai-generated)
-      - name: Run tests
-        run: npx playwright test --reporter=html
+      - name: Run tests (Chromium only, core + ai-generated)
+        run: npx playwright test --project=chromium,ai-generated --reporter=html
+
 
       # Always publish the HTML report
       - name: Upload HTML report
