@@ -59,12 +59,15 @@ This is a **snapshot of where my automation skillset is today**, not the finish 
 ## 📂 Repository Structure
 ```
 📁 .github/workflows/     →  GitHub Actions CI configuration  
-🧪 tests/                 →  Test suites (UI, API, POM)  
+🧪 tests/                 →  Core suites (UI, API, POM)  
 🧰 scripts/               →  Utility scripts (local-only helpers)  
-⚙️  playwright.config.ts   →  Global Playwright settings  
+⚙️ playwright.config.ts   →  Global Playwright settings  
 📦 package.json           →  Dependencies & npm scripts  
-📘 README.md              →  Documentation & setup guide  
+📘 README.md              →  Documentation & setup guide 
+🤖 agents/ai-generated/   →  AI-generated tests and agent plans (in alternate branch)  
 ```
+
+---
 
 ## ⚙️ Setup & Installation
 
@@ -73,19 +76,8 @@ This is a **snapshot of where my automation skillset is today**, not the finish 
 npm ci
 npx playwright install
 ```
+
 ---
-
-## 👨‍💻 Author
-**Ryan Goede** — TekQA Consulting  
-🌐 https://tekqaconsulting.com
-
-
-
-## 🏁 Status
-- ✅ 14/14 test cases passing in GitHub Actions across Chromium + Firefox
-- 🧪 Framework: Playwright + TypeScript
-- 📦 CI: GitHub Actions with cached browsers & artifacts
-
 
 ## 🧰 Useful Commands
 ```
@@ -107,3 +99,39 @@ npm run debug              # PWDEBUG=1 interactive mode
 # Results & visual regression
 npm run report             # Open the last HTML report
 npm run update-snapshots   # Approve new visual baselines
+```
+
+---
+
+## 🏁 Status
+- ✅ 14/14 test cases passing in GitHub Actions across Chromium + Firefox
+- 🧪 Framework: Playwright + TypeScript
+- 📦 CI: GitHub Actions with cached browsers & artifacts
+
+---
+
+## 🧩 Branch Overview
+
+This repository contains **two complementary branches** that demonstrate different approaches to QA automation:
+
+### 🔹 `main` — Hand-Crafted Automation
+- Traditional Playwright test suite written and maintained manually  
+- Demonstrates Page Object Model, DDT, hybrid API/UI tests, and CI reliability  
+👉 [View main branch »](https://github.com/rmgoede/tekqa-playwright-portfolio)
+
+### 🔹 `chore/agents-saucedemo-gen` — AI-Generated Automation
+- Experimental suite created entirely by autonomous **QA Agents**  
+- Includes **Planner**, **Generator**, and **Healer** agents that plan, create, and fix tests automatically  
+- Demonstrates how AI can assist human engineers in test authoring and maintenance  
+👉 [View AI-generated suite »](https://github.com/rmgoede/tekqa-playwright-portfolio/tree/chore/agents-saucedemo-gen/agents/ai-generated)
+
+---
+
+## 👨‍💻 Author
+**Ryan Goede** — TekQA Consulting LLC  
+🌐 [TekQAConsulting.com](https://tekqaconsulting.com)  
+🔗 [LinkedIn](https://www.linkedin.com/in/ryan-goede-374a1b2/)
+
+---
+
+> 💡 *This repository demonstrates both expert-authored and AI-generated automation — showing how craftsmanship and innovation can work together in modern QA engineering.*
