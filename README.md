@@ -104,7 +104,7 @@ npm run update-snapshots   # Approve new visual baselines
 ---
 
 ## 🏁 Status
-- ✅ 14/14 test cases passing in GitHub Actions across Chromium + Firefox
+- ✅ All current test cases passing in GitHub Actions across Chromium + Firefox
 - 🧪 Framework: Playwright + TypeScript
 - 📦 CI: GitHub Actions with cached browsers & artifacts
 
