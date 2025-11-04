@@ -122,7 +122,11 @@ This repository contains **two complementary branches** that demonstrate differe
 - Experimental suite created entirely by autonomous **QA Agents**  
 - Includes **Planner**, **Generator**, and **Healer** agents that plan, create, and fix tests automatically  
 - Demonstrates how AI can assist human engineers in test authoring and maintenance  
-👉 [View AI-generated suite »](https://github.com/rmgoede/tekqa-playwright-portfolio/tree/chore/agents-saucedemo-gen/agents/ai-generated)
+-  **📘 AI Suite Docs**  
+The AI-generated suite has its own README in the AI branch:  
+**agents/ai-generated/README.md** → https://github.com/rmgoede/tekqa-playwright-portfolio/tree/chore/agents-saucedemo-gen/agents/ai-generated/README.md
+
+    👉 [View AI-generated suite »](https://github.com/rmgoede/tekqa-playwright-portfolio/tree/chore/agents-saucedemo-gen/agents/ai-generated)
 
 ---
 
