@@ -60,7 +60,6 @@ This is a **snapshot of where my automation skillset is today**, not the finish 
 ```
 📁 .github/workflows/     →  GitHub Actions CI configuration  
 🧪 tests/                 →  Core suites (UI, API, POM)  
-🧰 scripts/               →  Utility scripts (local-only helpers)  
 ⚙️ playwright.config.ts   →  Global Playwright settings  
 📦 package.json           →  Dependencies & npm scripts  
 📘 README.md              →  Documentation & setup guide 
