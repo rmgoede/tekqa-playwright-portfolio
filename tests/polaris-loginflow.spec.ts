@@ -10,6 +10,9 @@ With Inspector at a specific pause (await test.debug() if you add it temporarily
 --PWDEBUG=1 npx playwright test tests/polaris-loginflow.spec.ts --project=chromium --headed.  
 */
 //--
+
+test.describe('@private Polaris login flow', () => {
+
 // Skip flaky WebKit runs until Polaris stabilizes there.
 test.skip(({ browserName }) => browserName === 'webkit', 'Polaris auth is flaky in WebKit right now.');
 
@@ -103,4 +106,5 @@ test('Polaris: login flow happy path', async ({ page }) => {
   } catch (err) {
     console.warn('⚠️ Logout skipped (menu not visible or already logged out).');
   }
+  });
 });
