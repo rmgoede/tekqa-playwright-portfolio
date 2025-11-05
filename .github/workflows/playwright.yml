@@ -10,6 +10,7 @@ jobs:
   # Runs on pushes/PRs from your repo with secrets
   # =========================
   test:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == false)
     permissions:
       contents: read       # read repo files only
       actions: write       # needed for upload-artifact
