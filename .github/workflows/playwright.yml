@@ -10,7 +10,8 @@ jobs:
   # Runs on pushes/PRs from your repo with secrets
   # =========================
   test:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == false)
+    # Run on push, and on PRs only when the PR head repo IS this repo (not a fork)
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository)
     permissions:
       contents: read       # read repo files only
       actions: write       # needed for upload-artifact
@@ -68,7 +69,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: playwright-report-${{ github.run_attempt }}
           path: playwright-report
           retention-days: 7
 
@@ -76,18 +77,19 @@ jobs:
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: traces
+          name: traces-${{ github.run_attempt }}
           path: test-results
           retention-days: 7
 
   # =========================
-  # NEW: Safe job for PRs from forks (no secrets)
-  # Runs only when the PR head is a fork
+  # Safe job for PRs from forks (no secrets)
+  # Runs only when the PR head is a different repo (a fork)
   # Skips @private tests (your Polaris specs)
   # Chromium only; uploads HTML report
   # =========================
   public-pr:
-    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.fork == true
+    # Run only for PRs whose head repo is NOT this repo (i.e., forks)
+    if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name != github.repository
     permissions:
       contents: read
       actions: write      # for upload-artifact
@@ -138,6 +140,6 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: playwright-report
+          name: playwright-report-${{ github.run_attempt }}
           path: playwright-report
           retention-days: 7
