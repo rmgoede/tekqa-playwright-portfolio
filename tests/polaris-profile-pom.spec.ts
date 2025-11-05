@@ -19,6 +19,8 @@
 
 import { test, expect } from '../src/fixtures/base-fixtures';
 
+test.describe('@private Polaris profile POM', () => {
+
 test.skip(({ browserName }) => browserName === 'webkit', 'Polaris auth is flaky in WebKit right now.');
 
 test('Polaris: login then open My Profile (POM) @POM', async ({ loginPage, accountMenu, profilePage }) => {
@@ -52,5 +54,6 @@ await test.step('Login', async () => {
   await test.step('Logout and verify logged out', async () => {
     await accountMenu.logout();
     await profilePage.expectLoggedOut();
+    });
   });
 });
