@@ -22,10 +22,35 @@ import { test, expect } from '@playwright/test';
  */
 
 test('GitHub: API repo data matches UI for microsoft/playwright @Hybrid @Single', async ({ page, request }) => {
-  // ---------- 1) Fetch canonical data from the API ----------
-  const apiRes = await request.get('https://api.github.com/repos/microsoft/playwright');
-  // Hard assertion: we truly expect GitHub to be up for this repo.
-  await expect(apiRes, 'GitHub API should respond 200 for microsoft/playwright').toBeOK();
+  // ---------- 1) Fetch canonical data from the API (auth if available) ----------
+const token = process.env.GITHUB_TOKEN;
+
+const apiRes = await request.get(
+  'https://api.github.com/repos/microsoft/playwright',
+  {
+    headers: {
+      'user-agent': 'tekqa-tests',
+      accept: 'application/vnd.github+json',
+      ...(token ? { authorization: `Bearer ${token}` } : {}),
+    },
+  }
+);
+
+// If a shared/busy runner hits unauthenticated rate limits, keep CI green but informative
+if (apiRes.status() === 403) {
+  try {
+    const msg = ((await apiRes.json())?.message ?? '').toString().toLowerCase();
+    const rlRemaining = apiRes.headers()['x-ratelimit-remaining'];
+    if (msg.includes('rate limit') || rlRemaining === '0') {
+      test.skip(true, 'Skipped: GitHub API rate limited on runner.');
+    }
+  } catch {
+    test.skip(true, 'Skipped: GitHub API 403 (possibly rate limited).');
+  }
+}
+
+// Hard assertion: we truly expect GitHub to be up for this repo.
+await expect(apiRes, 'GitHub API should respond 200 for microsoft/playwright').toBeOK();
 
   // Narrow the shape we care about (helps IntelliSense + maintenance).
   const repo = await apiRes.json() as {
