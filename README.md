@@ -1,5 +1,5 @@
 # 🧪 TekQA Playwright Portfolio  
-![Playwright Tests](https://github.com/rmgoede/tekqa-playwright-portfolio/actions/workflows/playwright.yml/badge.svg)
+![CI](https://github.com/rmgoede/tekqa-playwright-portfolio/actions/workflows/playwright.yml/badge.svg) ![Version](https://img.shields.io/github/v/tag/rmgoede/tekqa-playwright-portfolio?label=version)
 
 > Automated end-to-end testing portfolio showcasing CI/CD integration, cross-browser execution, and GitHub Actions workflow optimization.
 
