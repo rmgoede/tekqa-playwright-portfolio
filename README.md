@@ -100,7 +100,18 @@ npm run report             # Open the last HTML report
 npm run update-snapshots   # Approve new visual baselines
 ```
 
----
+### 🔁 Fork / PR Behavior
+- Forked PRs run public-safe `Chromium` tests only  
+- Tests tagged `@private` (ex: Polaris flows) are skipped automatically  
+- CI still uploads the HTML report artifact — no secrets required  
+
+Example private test (runs only in this repo, skipped in forks):
+
+```ts
+test.describe('@private Polaris login flow', () => {
+  // ...
+});
+```
 
 ## 🏁 Status
 - ✅ All current test cases passing in GitHub Actions across Chromium + Firefox
