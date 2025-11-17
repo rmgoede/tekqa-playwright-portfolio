@@ -17,6 +17,11 @@ This branch demonstrates **autonomous QA agents** that plan, generate, and heal 
 ## 🧪 Example Output
 The agents generated and healed end-to-end tests for the SauceDemo site, including visual baselines for key UI elements such as the inventory header.
 
+## 🆕 New Mini-Suite: HN Search DDT (AI-Hybrid)
+This self-contained example demonstrates the **AI-hybrid workflow** — a human-authored Playwright suite structured like an AI-generated one.  
+It uses JSON-driven queries, robust selectors, and its own local config to illustrate maintainable Data-Driven Testing.
+
+
 ## 📘 Reference
 For project structure, CI setup, and human-authored examples, see the main portfolio:  
 👉 [tekqa-playwright-portfolio (Main)](https://github.com/rmgoede/tekqa-playwright-portfolio)
