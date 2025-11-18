@@ -21,6 +21,16 @@ The agents generated and healed end-to-end tests for the SauceDemo site, includi
 This self-contained example demonstrates the **AI-hybrid workflow** — a human-authored Playwright suite structured like an AI-generated one.  
 It uses JSON-driven queries, robust selectors, and its own local config to illustrate maintainable Data-Driven Testing.
 
+👉 [View mini-suite »](./hn-search-ddt/README.md)
+
+## 🆕 New Mini-Suite: Wikipedia Visual Snapshots (AI-Hybrid)
+
+This lightweight example demonstrates a **human-authored visual regression suite** placed inside the AI-inspired folder structure — reinforcing the hybrid workflow of AI for planning & humans for reliability.
+
+It uses Playwright visual snapshots (`toHaveScreenshot`), semantic selectors, and stable Wikipedia pages as a safe, public test target.
+
+👉 [View mini-suite »](./wiki-visual/README.md)
+
 
 ## 📘 Reference
 For project structure, CI setup, and human-authored examples, see the main portfolio:  

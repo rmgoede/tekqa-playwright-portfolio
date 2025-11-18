@@ -127,6 +127,10 @@ This repository contains **two complementary branches** that demonstrate differe
   Uses JSON-driven queries, robust selectors, and its own local config to illustrate maintainable Data-Driven Testing.  
   👉 [View mini-suite »](agents/ai-generated/hn-search-ddt/README.md)
 
+- **Wikipedia Visual Snapshots (AI-Hybrid)** - A lightweight visual regression example demonstrating human-authored snapshot tests inside the AI-inspired folder structure.  
+Uses Playwright visual snapshots (`toHaveScreenshot`), semantic locators, and stable Wikipedia pages as a public test target.  
+👉 [View mini-suite »](agents/ai-generated/wiki-visual/README.md)
+
 👉 [View AI-generated suite »](https://github.com/rmgoede/tekqa-playwright-portfolio/tree/chore/agents-saucedemo-gen/agents/ai-generated)
 
 ---
