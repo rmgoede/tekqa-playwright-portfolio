@@ -138,11 +138,13 @@ This repository contains **two complementary branches** that demonstrate differe
 
 - **HN Search DDT (AI-Hybrid)** – A small, self-contained mini-suite that mimics AI-generated structure using human-authored Playwright code.  
   Uses JSON-driven queries, robust selectors, and its own local config to illustrate maintainable Data-Driven Testing.  
-  👉 [View mini-suite »](agents/ai-generated/hn-search-ddt/README.md)
+  👉 [View mini-suite »](https://github.com/rmgoede/tekqa-playwright-portfolio/tree/chore/agents-saucedemo-gen/agents/ai-generated/hn-search-ddt)
+
 
 - **Wikipedia Visual Snapshots (AI-Hybrid)** – A lightweight visual regression example demonstrating human-authored snapshot tests inside the AI-inspired folder structure.  
   Uses Playwright visual snapshots (`toHaveScreenshot`), semantic locators, and stable Wikipedia pages as a public test target.  
-  👉 [View mini-suite »](agents/ai-generated/wiki-visual/README.md)
+  👉 [View mini-suite »](https://github.com/rmgoede/tekqa-playwright-portfolio/tree/chore/agents-saucedemo-gen/agents/ai-generated/wiki-visual)
+
 
 -  **📘 AI Suite Docs**  
 The AI-generated suite has its own README in the AI branch:  
