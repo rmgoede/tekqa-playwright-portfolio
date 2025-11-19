@@ -133,6 +133,17 @@ This repository contains **two complementary branches** that demonstrate differe
 - Experimental suite created entirely by autonomous **QA Agents**  
 - Includes **Planner**, **Generator**, and **Healer** agents that plan, create, and fix tests automatically  
 - Demonstrates how AI can assist human engineers in test authoring and maintenance  
+
+**AI-Hybrid Mini-Suites**
+
+- **HN Search DDT (AI-Hybrid)** – A small, self-contained mini-suite that mimics AI-generated structure using human-authored Playwright code.  
+  Uses JSON-driven queries, robust selectors, and its own local config to illustrate maintainable Data-Driven Testing.  
+  👉 [View mini-suite »](agents/ai-generated/hn-search-ddt/README.md)
+
+- **Wikipedia Visual Snapshots (AI-Hybrid)** – A lightweight visual regression example demonstrating human-authored snapshot tests inside the AI-inspired folder structure.  
+  Uses Playwright visual snapshots (`toHaveScreenshot`), semantic locators, and stable Wikipedia pages as a public test target.  
+  👉 [View mini-suite »](agents/ai-generated/wiki-visual/README.md)
+
 -  **📘 AI Suite Docs**  
 The AI-generated suite has its own README in the AI branch:  
 **agents/ai-generated/README.md** → https://github.com/rmgoede/tekqa-playwright-portfolio/tree/chore/agents-saucedemo-gen/agents/ai-generated/README.md
