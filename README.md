@@ -145,6 +145,8 @@ This repository contains **two complementary branches** that demonstrate differe
   Uses Playwright visual snapshots (`toHaveScreenshot`), semantic locators, and stable Wikipedia pages as a public test target.  
   👉 [View mini-suite »](https://github.com/rmgoede/tekqa-playwright-portfolio/tree/chore/agents-saucedemo-gen/agents/ai-generated/wiki-visual)
 
+- **🛒 DemoShop Cart & Totals (AI-Hybrid)** — JSON-driven cart/total verification against SauceDemo.  
+  👉 [View mini-suite »](https://github.com/rmgoede/tekqa-playwright-portfolio/tree/chore/agents-saucedemo-gen/agents/ai-generated/demoshop-cart/README.md)
 
 -  **📘 AI Suite Docs**  
 The AI-generated suite has its own README in the AI branch:  
