@@ -21,7 +21,10 @@ import { test, expect } from '@playwright/test';
  * without flaking on harmless cosmetic changes.
  */
 
-test('GitHub: API repo data matches UI for microsoft/playwright @Hybrid @Single', async ({ page, request }) => {
+test('GitHub: API repo data matches UI for microsoft/playwright @Hybrid @Single', async ({ request, page }) => {
+  // Skip in CI to avoid GitHub API rate-limit flakes
+  test.skip(!!process.env.CI, 'Skipped in CI: GitHub unauthenticated API is often rate-limited');
+
   // ---------- 1) Fetch canonical data from the API ----------
   const apiRes = await request.get('https://api.github.com/repos/microsoft/playwright');
   // Hard assertion: we truly expect GitHub to be up for this repo.
